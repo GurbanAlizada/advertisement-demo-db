@@ -18,13 +18,10 @@ import java.util.*;
 
 @NamedQueries({
         @NamedQuery(name = "UserDetail.findByUserName" , query = "select ud from UserDetail ud where ud.user.userName = :username") ,
-        @NamedQuery(name = "UserDetail.findByUserName2" , query = "select ud from UserDetail ud left join fetch ud.user u where u.userName = :username") ,
         @NamedQuery(name = "UserDetail.findAddressByUsername" , query = "select ud from UserDetail ud left join fetch ud.addressesrres  where ud.user.userName = :username" ),
-        @NamedQuery(name = "UserDetail.findAddressByUsername2" , query = "select ud from UserDetail ud left join fetch ud.addressesrres a  left join fetch ud.user u where u.userName = :username" ),
         @NamedQuery(name ="User.Detail.findAdvertisementByUserName" , query = "select ud from UserDetail  ud left join fetch ud.advertisements  where ud.user.userName = :username") ,
-        @NamedQuery(name ="User.Detail.findAdvertisementByUserName2" , query = "select ud from UserDetail  ud left join fetch ud.advertisements a left join fetch ud.user  where ud.user.userName = :username") ,
-        @NamedQuery(name ="User.Detail.findPhoneNumbersByUsername" , query = "select ud from UserDetail  ud left join fetch ud.phoneNumbers p left join fetch ud.user u where u.userName = :username") ,
-        @NamedQuery(name ="User.Detail.findEmailsByUserName" , query = "select ud from UserDetail  ud left join fetch ud.emails e left join fetch ud.user u where u.userName = :username")
+        @NamedQuery(name ="User.Detail.findPhoneNumbersByUsername" , query = "select ud from UserDetail  ud left join fetch ud.phoneNumbers  left join fetch ud.user u where u.userName = :username") ,
+        @NamedQuery(name ="User.Detail.findEmailsByUserName" , query = "select ud from UserDetail  ud left join fetch ud.emails  left join fetch ud.user u where u.userName = :username")
 })
 
 

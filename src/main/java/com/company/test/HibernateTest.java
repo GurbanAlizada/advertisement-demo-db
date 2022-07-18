@@ -37,10 +37,10 @@ public class HibernateTest implements Factory {
        */
 
 
-/*
+
         UserDetailService userDetailService = new UserDetailServiceImpl();
         System.out.println(userDetailService.findAddressByUsername("VolkanDemirel"));
-*/
+
 
 
 /*
