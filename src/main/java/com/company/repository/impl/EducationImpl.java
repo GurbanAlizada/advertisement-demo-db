@@ -52,10 +52,11 @@ public class EducationImpl implements EducationRepo , Factory {
     }
 
     @Override
-    public Education findEducationByIdWithAdvertisement() {
+    public Education findEducationByIdWithAdvertisement(int id) {
         Education education = null;
         try{
             TypedQuery<Education> typedQuery = entityManager.createNamedQuery("Education.findEducationByIdWithAdvertisement" , Education.class);
+            typedQuery.setParameter("id" , id);
             education = typedQuery.getSingleResult();
         } catch (Exception e) {
             System.out.println("Error : " + e);

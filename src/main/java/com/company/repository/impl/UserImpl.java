@@ -141,7 +141,7 @@ public class UserImpl implements UserRepo , Factory {
     }
 
     @Override
-    public int findUserCount() {
+    public long findUserCount() {
         int count=0;
         try {
             TypedQuery<Integer> typedQuery = entityManager.createNamedQuery("User.findUserCount", Integer.class);

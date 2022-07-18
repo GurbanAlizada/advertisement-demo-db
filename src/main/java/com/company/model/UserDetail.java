@@ -49,14 +49,14 @@ public class UserDetail implements Serializable {
     private Date dateOfBirth;
 
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.LAZY )
     @JoinTable(name = "userdetail_phonenumbers" , joinColumns = @JoinColumn(name = "user_detail_id"))
     @MapKeyColumn(name = "phone_types" )
     @JoinColumn(name = "phone_number")
     private Map<PhoneType , String> phoneNumbers = new HashMap<>();
 
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.LAZY )
     @JoinTable(name = "userdetail_addresses" , joinColumns = @JoinColumn(name = "user_detail_id"))
     @AttributeOverrides({
             @AttributeOverride(name = "street" , column = @Column(name = "town"))
@@ -78,6 +78,21 @@ public class UserDetail implements Serializable {
 
     @OneToOne(mappedBy = "userDetail" , fetch = FetchType.LAZY)
     private User user ;
+
+    @Override
+    public String toString() {
+        return "UserDetail{" +
+                "userDetailId=" + userDetailId +
+                ", firstName='" + firstName + '\'' +
+                ", surName='" + surName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", phoneNumbers=" + phoneNumbers +
+                ", addressesrres=" + addressesrres +
+                ", emails=" + emails +
+                ", advertisements=" + advertisements +
+               // ", user=" + user +
+                '}';
+    }
 
 
 }

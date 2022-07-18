@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int findUserCount() {
+    public long findUserCount() {
 
         return this.userRepo.findUserCount();
     }

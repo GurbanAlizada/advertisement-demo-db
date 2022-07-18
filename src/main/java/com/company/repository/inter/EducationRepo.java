@@ -15,7 +15,7 @@ public interface EducationRepo {
 
     List<Education> findAllEducation();
 
-    Education findEducationByIdWithAdvertisement();
+    Education findEducationByIdWithAdvertisement(int id);
 
 
 }

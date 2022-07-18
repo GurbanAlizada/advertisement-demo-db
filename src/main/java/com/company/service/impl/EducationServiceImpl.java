@@ -33,7 +33,7 @@ public class EducationServiceImpl implements EducationService {
     }
 
     @Override
-    public Education findEducationByIdWithAdvertisement() {
-        return this.educationRepo.findEducationByIdWithAdvertisement();
+    public Education findEducationByIdWithAdvertisement(int id) {
+        return this.educationRepo.findEducationByIdWithAdvertisement(id);
     }
 }

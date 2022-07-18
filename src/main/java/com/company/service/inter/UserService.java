@@ -26,5 +26,5 @@ public interface UserService {
 
     UserInfo findUserInfoByUsername();
 
-    int findUserCount();
+    long findUserCount();
 }

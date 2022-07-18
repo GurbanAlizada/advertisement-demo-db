@@ -42,5 +42,13 @@ public class Education implements Serializable {
     @ManyToMany(mappedBy = "educations" , fetch = FetchType.LAZY)
     private List<Advertisement> advertisementList;
 
-
+    @Override
+    public String toString() {
+        return "Education{" +
+                "educationId=" + educationId +
+                ", educationName='" + educationName + '\'' +
+                ", lisansYear=" + lisansYear +
+                ", advertisementList=" + advertisementList +
+                '}';
+    }
 }

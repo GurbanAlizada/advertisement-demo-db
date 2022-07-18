@@ -60,18 +60,30 @@ public class Advertisement  implements Serializable {
     private boolean enabled = false;
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY , cascade = CascadeType.PERSIST)
     @JoinTable(name = "advertisement_education" ,
             joinColumns = @JoinColumn(name = "advertisement_id") ,
             inverseJoinColumns = @JoinColumn(name = "education_id"))
     private List<Education>  educations = new ArrayList<Education>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_detail_id")
     private UserDetail userDetail;
 
 
-
-
-
+    @Override
+    public String toString() {
+        return "Advertisement{" +
+                "advertisementId=" + advertisementId +
+                ", title='" + title + '\'' +
+                ", criteria='" + criteria + '\'' +
+                ", workDefinition='" + workDefinition + '\'' +
+                ", addDate=" + addDate +
+                ", updateDate=" + updateDate +
+                ", removeDate=" + removeDate +
+                ", enabled=" + enabled +
+              //  ", educations=" + educations +
+              //  ", userDetail=" + userDetail +
+                '}';
+    }
 }

@@ -31,5 +31,5 @@ public interface UserRepo {
 
     UserInfo findUserInfoByUsername();
 
-    int findUserCount();
+    long findUserCount();
 }

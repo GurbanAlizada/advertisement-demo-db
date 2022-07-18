@@ -3,12 +3,14 @@ package com.company.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Data
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -45,10 +47,18 @@ public class User implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY , cascade = {CascadeType.PERSIST , CascadeType.PERSIST , CascadeType.REMOVE})
     @JoinColumn(name = "user_detail_id")
     private UserDetail userDetail;
 
-
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", creationDate=" + creationDate +
+                ", userDetail=" + userDetail +
+                '}';
+    }
 }

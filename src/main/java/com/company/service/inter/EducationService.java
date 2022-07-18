@@ -14,7 +14,7 @@ public interface EducationService {
 
     List<Education> findAllEducation();
 
-    Education findEducationByIdWithAdvertisement();
+    Education findEducationByIdWithAdvertisement(int id);
 
 
 }
